@@ -16,10 +16,12 @@ permissões e agenda. Agendamento precisa ser configurado pelo agente na API Her
 sem um job confirmado não existe monitoramento periódico. Mac dormindo, desligado
 ou Latch desconectado impede coleta. Não há previsão de falha de hardware.
 
-## Deploy local atual
+## Deploy hospedado
 
 Identidade: `mac-nurse` / **Mac Nurse**. Linha: `ln_p1`, +1 (650) 346-6610.
-Container local em Docker; ainda exige teste de conversa e conexão Latch.
+Imagem pública: `ghcr.io/guibersi7/mac-nurse:v1`. Deploy hospedado no Plow por digest.
+O Docker local não precisa ficar aberto; o Latch no Mac continua necessário.
+Volume local preservado para recuperação do histórico; estado não foi transferido à nuvem.
 Credenciais ficam fora do Git e da imagem. Não compartilhe esses arquivos.
 
 ## Rodar
