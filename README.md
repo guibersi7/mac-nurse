@@ -87,3 +87,22 @@ O [onboarding de permissões](docs/latch-onboarding.md) oferece perfis opcionais
 monitoramento e organização. O agente prepara instruções Gatekeeper específicas;
 na integração atual o dono aplica a seção no Latch. Autorizações do macOS e ações
 fora do escopo ainda podem exigir intervenção.
+
+## Pipeline central para melhoria global
+
+A [explicação do AI Engineer](docs/global-evals-design.md) descreve cada etapa,
+decisão e motivo. A [recepção privada](docs/global-evals-intake.md) implementa
+consentimento/isolamento; o [gate de release](docs/global-evals-release.md) vincula
+a aprovação à comparação e à imagem. O piloto inicial é local, sem conversas reais
+compartilhadas, chamadas pagas ou atualização automática das instâncias Plow.
+
+Demonstração local completa, somente com dados sintéticos:
+
+```sh
+python3 -m evals.global_evals.demo --output-root evals/private/novo-piloto-sintetico
+```
+
+Essa demonstração termina com release bloqueada porque não executou um modelo real.
+O harness `python3 -m evals.global_evals replay --help` permite configurar replays reais
+com destino/modelo explícitos, ferramentas simuladas, limites e revisão de resultados.
+Não confunda um CI aprovado com melhoria comprovada do agente para usuários.

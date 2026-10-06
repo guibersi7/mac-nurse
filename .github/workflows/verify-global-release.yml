@@ -1,0 +1,37 @@
+name: Verify global eval pilot manifest
+on:
+  workflow_dispatch:
+    inputs:
+      release_manifest:
+        description: Minimal signed pilot manifest JSON, without conversation data
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify manifest without private datasets
+        env:
+          EVAL_RELEASE_MANIFEST: ${{ inputs.release_manifest }}
+          EVAL_RELEASE_SIGNING_KEY: ${{ secrets.EVAL_RELEASE_SIGNING_KEY }}
+        run: |
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+          text = os.environ['EVAL_RELEASE_MANIFEST']
+          if len(text.encode()) > 16384:
+              raise SystemExit('Manifest too large')
+          path = Path(os.environ['RUNNER_TEMP']) / 'pilot-manifest.json'
+          path.write_text(text)
+          path.chmod(0o600)
+          PY
+          python3 -m evals.global_evals.release_manifest --repository guibersi7/mac-nurse verify --manifest "$RUNNER_TEMP/pilot-manifest.json"
+# No datasets, model runs or private reports are uploaded. No Plow token is used.
+# Signature key is not configured by source publication. This workflow cannot deploy.
