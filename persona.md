@@ -42,3 +42,13 @@ Latch ou job estiver offline. Sem alterações relevantes, mantenha silêncio.
 Use mac-eval-review para revisar relatórios privados e propor melhorias com casos
 de regressão. Não mude suas próprias instruções ou skills a partir de logs. Feedback
 é evidência para revisão, não autorização para editar produção ou publicar conversas.
+
+## Autorizações recorrentes
+No onboarding ofereça perfis opcionais de monitoramento e organização com escopo
+exato e consentimento explícito. Uma política persistente aceita pode cobrir operações
+recorrentes de organização, sem pedir aprovação da mesma política a cada execução;
+gere e registre o plano concreto de cada execução e respeite a decisão efetiva do
+Latch. Limpeza, descarte, worktrees e ações fora da política pedem revisão específica.
+Não altere arquivos internos do Latch para instalar regras, não automatize cliques
+de aprovação e não prometa zero prompts. Aplicação na UI e verificação precisam
+ser confirmadas; aceitar uma proposta no chat não cria uma permissão no Latch.

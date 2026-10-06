@@ -19,6 +19,10 @@ description: Organizar Downloads e Documents e pastas do Mac, sugerir descarte e
    pela localização; confirme tipo. Renomear pode quebrar referências: informe no plano.
 5. Produza plano imutável com ID, origem, destino, ação, evidência, confiança,
    tamanho, identidade do arquivo e motivos. Plano aprovado cobre só esses itens.
+   Para moves/renames cobertos por política persistente de organização explicitamente
+   aceita no onboarding, registre plano e correspondência exata com essa política;
+   não peça novamente aprovação da política. Sem cobertura ou se houver descarte,
+   solicite revisão específica. A decisão/grant real do Latch continua obrigatório.
    Revalide identidade/tamanho/mtime e destino imediatamente antes da operação;
    alteração desde a revisão invalida aquele item. Proíba destinos fora das raízes
    aprovadas, symlinks e mover diretório para dentro dele mesmo.

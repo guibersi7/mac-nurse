@@ -80,3 +80,10 @@ Veja [pipeline de evals](evals/README.md) e [coleta hospedada](docs/eval-runtime
 O CI avalia regressões sintéticas antes de publicar a imagem. A imagem inclui um
 coletor privado offline das conversas Hermes a cada seis horas. Relatórios geram
 propostas para revisão; não alteram persona, skills ou pesos do modelo automaticamente.
+
+## Menos pedidos recorrentes no Latch
+
+O [onboarding de permissões](docs/latch-onboarding.md) oferece perfis opcionais de
+monitoramento e organização. O agente prepara instruções Gatekeeper específicas;
+na integração atual o dono aplica a seção no Latch. Autorizações do macOS e ações
+fora do escopo ainda podem exigir intervenção.
