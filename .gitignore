@@ -1,0 +1,9 @@
+/plow-credentials
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+/reports/
+
+/.plow-account-token

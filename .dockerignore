@@ -1,0 +1,9 @@
+.git
+plow-credentials
+.env
+.env.*
+__pycache__
+tests
+reports
+
+.plow-account-token
