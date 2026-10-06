@@ -1,0 +1,20 @@
+name: Mac Nurse offline evaluations
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-regressions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run inventory and synthetic evaluation regressions
+        run: python3 -m unittest discover -s tests -v
+# No private session import, model API, secret, cache or artifact upload in CI.

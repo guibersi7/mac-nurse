@@ -73,3 +73,10 @@ Nunca inclua credenciais, documentos, screenshots ou relatórios privados na ima
 
 Veja [arquitetura e critérios de aceitação](docs/architecture.md) e
 [fontes oficiais consultadas](docs/plow-sources.md).
+
+## Avaliações contínuas
+
+Veja [pipeline de evals](evals/README.md) e [coleta hospedada](docs/eval-runtime.md).
+O CI avalia regressões sintéticas antes de publicar a imagem. A imagem inclui um
+coletor privado offline das conversas Hermes a cada seis horas. Relatórios geram
+propostas para revisão; não alteram persona, skills ou pesos do modelo automaticamente.

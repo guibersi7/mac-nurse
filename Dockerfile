@@ -7,3 +7,8 @@ COPY --chown=0:0 persona.md /opt/hermes/plow-seed/persona.md
 RUN chmod 0644 /opt/hermes/plow-seed/persona.md
 COPY --chown=10000:10000 skills/ /var/lib/hermes/skills/
 COPY --chown=10000:10000 skills/ /opt/hermes/skills/
+# Private offline evaluation collector; code outside the writable agent home.
+COPY --chown=0:0 evals/pipeline.py /opt/plow/mac-nurse-evals/pipeline.py
+COPY --chown=0:0 evals/runtime/ /opt/plow/mac-nurse-evals/runtime/
+COPY --chown=0:0 image/s6-overlay/ /etc/s6-overlay/
+RUN chmod 0755 /etc/s6-overlay/s6-rc.d/mac-nurse-evals/run

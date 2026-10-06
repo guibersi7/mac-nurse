@@ -7,3 +7,6 @@ __pycache__/
 /reports/
 
 /.plow-account-token
+
+# Private evaluation exports, corpus, reports and review state
+/evals/private/

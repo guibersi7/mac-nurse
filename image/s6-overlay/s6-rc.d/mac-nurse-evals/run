@@ -1,0 +1,11 @@
+#!/bin/sh
+# Root-owned evaluator, agent-owned private state; no network or model mutations.
+PATH=/command:/usr/local/bin:/usr/bin:/bin
+export PATH
+while :; do
+  /command/s6-setuidgid hermes /opt/hermes/.venv/bin/python3 \
+    /opt/plow/mac-nurse-evals/runtime/collect.py \
+    --db /var/lib/hermes/state.db \
+    --output-dir /var/lib/hermes/mac-nurse-evals
+  sleep 21600
+done
